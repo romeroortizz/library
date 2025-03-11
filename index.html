@@ -7,7 +7,50 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Library</h1>
+    <button class="btn">Add Book</button>
+    <div class="library-container">
+        <!-- <div class="book-contents">
+            <h3 class="book-title">The Shinning</h3>
+            <p class="book-author">Stephen King</p>
+            <p class="total-pages">330</p>
+        </div> -->
+    </div>
+
+    <dialog class="dialog">
+      
+        <form class="form">
+            <div class="field">
+                <label for="title">Book Title:</label>
+                <input required id="title" type="text" class="title max">
+            </div>
+            
+
+            <div class="field">
+                <label for="author">Author:</label>
+                <input required type="text" id="author" class="author max">
+            </div>
+
+            <div class="field">
+                <label for="pages">Pages</label>
+                <input required type="number" id="pages" class=" pages max">
+            </div>
+
+            <div class="field">
+                <label for="read">Read</label>
+                <input  type="checkbox" id="read" class="read">
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="continue">Continue</button>
+                <button class="cancel">Cancel</button>
+            </div>
+        
+        </form>
+        
+    </dialog>
+
+
 
 <script src="app.js"></script>
 </body>
