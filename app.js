@@ -28,7 +28,7 @@ function displayBook() {
                             <p class="read-status">${lastBook.read}</p>
                             <div class="book-btn-container">
                             <button class = "remove" data-id = "${lastBook.id}">Remove</button>
-                            <button class="read">Read</button>
+                            <button class="read" data-id = "${lastBook.id}">Read</button>
                             </div>
                             
                          </div>`
@@ -39,6 +39,7 @@ function displayBook() {
 
     const remove = document.querySelectorAll('.remove')
     const allBookContents = document.querySelectorAll('.book-contents')
+
     remove.forEach(r => {
         r.addEventListener('click', () => {
             for (let b of allBookContents) {
@@ -51,7 +52,21 @@ function displayBook() {
        })
    })
     //toggle read state
-    // const 
+    const read = document.querySelectorAll('.read')
+
+    read.forEach(re => {
+        re.addEventListener('click', () => {
+            for (let b of allBookContents) {
+                if (b.dataset.id === re.dataset.id) {
+                    let target = b.children[3]
+                    target.textContent === "Read Book" ? target.textContent = 'Not Read Book' :
+                        target.textContent = 'Read Book'
+                    
+                }
+            }
+        })
+    })
+   
 }
 
 btn.addEventListener('click',displayModal)
@@ -68,7 +83,6 @@ form.addEventListener('submit', (event) => {
     
     checkBox? hasRead = "Read Book" : hasRead = "Not Read Book"
 
-  
     const book = new Book(newTitle, newAuthor, newPages,hasRead)
     myLibrary.push(book)
     displayBook()
